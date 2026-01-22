@@ -1,0 +1,65 @@
+// {
+//   "extends": "@react-native/typescript-config",
+//   "compilerOptions": {
+//     "types": ["jest"],
+//   },
+//   "include": ["**/*.ts", "**/*.tsx"],
+//   "exclude": ["**/node_modules", "**/Pods"]
+// }
+
+
+
+
+// {
+//   "extends": "@react-native/typescript-config/tsconfig.json",
+//   "compilerOptions": {
+//     "typeRoots": ["node_modules/@types", "src/types"],
+//     "types": ["jest"],
+//     "baseUrl": "./",
+//     "paths": {
+//       "@assets/*": ["src/assets/*"],
+//       "@features/*": ["src/features/*"],
+//       "@navigation/*": ["src/navigation/*"],
+//       "@components/*": ["src/components/*"],
+//       "@unistyles/*": ["src/unistyles/*"],
+//       "@states/*": ["src/states/*"],
+//       "@services/*": ["src/services/*"],
+//       "@utils/*": ["src/utils/*"]
+//     }
+//   }
+// }
+
+
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext"],
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@features/*": ["src/features/*"],
+      "@navigation/*": ["src/navigation/*"],
+      "@components/*": ["src/components/*"],
+      "@unistyles/*": ["src/unistyles/*"],
+      "@states/*": ["src/states/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "typeRoots": ["node_modules/@types", "src/types"],
+    "types": ["jest"]
+  }
+}
+
+
+
+// paths - directly comes on the specified path no need to give ../../ 
