@@ -1,5 +1,6 @@
 
 
+
 import { Dimensions } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { Colors, Fonts } from './Constants';

@@ -2,7 +2,6 @@
 
 
 
-
 import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native';
 import { defaultTheme } from './unistyles';
 
@@ -16,6 +15,11 @@ export const splashStyles = StyleSheet.create({
     alignItems: 'center',
   } as ViewStyle,
   msgText: {
+    // borderWidth:1.9,
+    // padding:10,
+    // borderRadius:10,
+    // fontWeight:"bold",
+    // fontSize:30,
     textAlign: 'center',
     color: colors.text,
   } as TextStyle,

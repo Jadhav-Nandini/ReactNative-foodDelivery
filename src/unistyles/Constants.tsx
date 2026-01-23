@@ -6,9 +6,11 @@ export const screenWidth = Dimensions.get('screen').width
 export const isBannerHeight = screenHeight * 0.4
 
 export const Colors = {
+    // primary: '#bd96fc5d',
     primary: '#EF6F1E',
     primary_light: '#EF4F5F',
     text: '#222',
+    // text: '#fff',
     active_light:'#ECFAF1',
     secondary: '#2D2D2D',
     tertiary: '#F4F4F2',
