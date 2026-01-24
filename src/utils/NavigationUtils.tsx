@@ -1,3 +1,5 @@
+//for global reference 
+
 import {
     createNavigationContainerRef,
     CommonActions,

@@ -1,19 +1,27 @@
 import { StyleSheet, Text, View } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { FC } from 'react'
+// import { FC } from 'react'
 import SplashScreen from '@features/auth/SplashScreen'
+import LoginScreen from '@features/auth/LoginScreen'
+import { navigationRef } from '@utils/NavigationUtils'
 
 const Stack = createNativeStackNavigator()
 
-const Navigation:FC = () => {
+const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
         <Stack.Navigator initialRouteName='SplashScreen'
         screenOptions={{
             headerShown:false
         }}>
             <Stack.Screen name='SplashScreen' component={SplashScreen} />
+            <Stack.Screen 
+            options={{
+              animation: 'fade'
+            }}
+            name='LoginScreen'
+            component={LoginScreen} />
 
         </Stack.Navigator>
     </NavigationContainer>

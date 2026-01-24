@@ -45,6 +45,8 @@ export const loginStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
+    // justifyContent:'center',
+    // alignItems:'center',
   } as ViewStyle,
   cover: {
     width: '100%',
@@ -63,7 +65,7 @@ export const loginStyles = StyleSheet.create({
   } as ViewStyle,
   title: {
     textAlign: 'center',
-    marginHorizontal: 20,
+    marginHorizontal: 24,
   } as TextStyle,
   buttonContainer: {
     backgroundColor: colors.primary,

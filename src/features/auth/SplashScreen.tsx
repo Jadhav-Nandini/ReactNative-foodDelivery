@@ -2,12 +2,22 @@
 
 
 import { View, Text, Image } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Animated, { FadeInDown } from 'react-native-reanimated'
 import { splashStyles } from '@unistyles/authStyles';
 import CustomText from '@components/global/CustomText';
+import { resetAndNavigate } from '@utils/NavigationUtils';
 
 const SplashScreen = () => {
+  
+  useEffect(()=>{
+    const timeoutId = setTimeout(() => {
+      resetAndNavigate('LoginScreen')
+    }, 4000)
+
+    return ()=> clearTimeout(timeoutId)
+  },[])
+  
   return (
     <View style={splashStyles.container}>
       {/* <Text style={splashStyles.msgText}>The App is Started...</Text> */}

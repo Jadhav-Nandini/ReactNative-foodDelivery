@@ -7,14 +7,18 @@ export const isBannerHeight = screenHeight * 0.4
 
 export const Colors = {
     // primary: '#bd96fc5d',
-    primary: '#EF6F1E',
+    primary: '#f87509e8',
+
+    // primary: '#EF6F1E',
     primary_light: '#EF4F5F',
     text: '#222',
-    // text: '#fff',
+    // text: '#d7f8dd',
     active_light:'#ECFAF1',
-    secondary: '#2D2D2D',
+    secondary: '#e98e18',
     tertiary: '#F4F4F2',
     background: '#fff',
+    // background: '#fc9b2c28',
+
     background_light:'#F4F6FC',
     border: '#E5E9EF',
     lightText: '#9197A6',
