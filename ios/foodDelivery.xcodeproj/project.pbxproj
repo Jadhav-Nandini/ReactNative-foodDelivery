@@ -11,6 +11,11 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		B10EC114366E400386D39B71 /* Okra-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0CA035D040044DAA81B5E35 /* Okra-Bold.ttf */; };
+		021DB559ED66499D8016EC7A /* Okra-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BF5FD80085434ABB9C19C573 /* Okra-ExtraBold.ttf */; };
+		B98738FCB6104564B85049C8 /* Okra-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E78BEEA57A21474AA0BE2923 /* Okra-Medium.ttf */; };
+		3156536655264C43B1B9BFAF /* Okra-MediumLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2303C95A391E4C64A09B6AD3 /* Okra-MediumLight.ttf */; };
+		EDA32D64053340D9A34C4F06 /* Okra-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E581C3883714C28A96F6323 /* Okra-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = foodDelivery/AppDelegate.swift; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = foodDelivery/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		B0CA035D040044DAA81B5E35 /* Okra-Bold.ttf */ = {isa = PBXFileReference; name = "Okra-Bold.ttf"; path = "../src/assets/fonts/Okra-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BF5FD80085434ABB9C19C573 /* Okra-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Okra-ExtraBold.ttf"; path = "../src/assets/fonts/Okra-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E78BEEA57A21474AA0BE2923 /* Okra-Medium.ttf */ = {isa = PBXFileReference; name = "Okra-Medium.ttf"; path = "../src/assets/fonts/Okra-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2303C95A391E4C64A09B6AD3 /* Okra-MediumLight.ttf */ = {isa = PBXFileReference; name = "Okra-MediumLight.ttf"; path = "../src/assets/fonts/Okra-MediumLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6E581C3883714C28A96F6323 /* Okra-Regular.ttf */ = {isa = PBXFileReference; name = "Okra-Regular.ttf"; path = "../src/assets/fonts/Okra-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +84,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				32C0C16ABBAB49CEA2ADF5B4 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -96,6 +107,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		32C0C16ABBAB49CEA2ADF5B4 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				B0CA035D040044DAA81B5E35 /* Okra-Bold.ttf */,
+				BF5FD80085434ABB9C19C573 /* Okra-ExtraBold.ttf */,
+				E78BEEA57A21474AA0BE2923 /* Okra-Medium.ttf */,
+				2303C95A391E4C64A09B6AD3 /* Okra-MediumLight.ttf */,
+				6E581C3883714C28A96F6323 /* Okra-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -159,6 +183,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B10EC114366E400386D39B71 /* Okra-Bold.ttf in Resources */,
+				021DB559ED66499D8016EC7A /* Okra-ExtraBold.ttf in Resources */,
+				B98738FCB6104564B85049C8 /* Okra-Medium.ttf in Resources */,
+				3156536655264C43B1B9BFAF /* Okra-MediumLight.ttf in Resources */,
+				EDA32D64053340D9A34C4F06 /* Okra-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

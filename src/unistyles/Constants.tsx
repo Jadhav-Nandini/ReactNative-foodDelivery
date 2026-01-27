@@ -21,6 +21,8 @@ export const Colors = {
 
     background_light:'#F4F6FC',
     border: '#E5E9EF',
+    
+
     lightText: '#9197A6',
     active: '#019A51',
     dark: '#18171C'

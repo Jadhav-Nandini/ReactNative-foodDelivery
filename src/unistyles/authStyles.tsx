@@ -2,11 +2,127 @@
 
 
 
+
+// import {StyleSheet } from 'react-native-unistyles'
+// import { defaultTheme } from './unistyles';
+
+// const { colors, device, border } = defaultTheme;
+
+// export const splashStyles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: colors.primary,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   } ,
+//   msgText: {
+
+//     textAlign: 'center',
+//     color: colors.text,
+//   } ,
+//   logoImage: {
+//     width: device.width * 0.8,
+//     height: device.height * 0.4,
+//     resizeMode: 'contain',
+//     marginTop: 80,
+//   },
+//   treeImage: {
+//     width: device.width * 0.4,
+//     height: device.height * 0.14,
+//     resizeMode: 'contain',
+//   },
+//   animatedContainer: {
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     paddingHorizontal: 40,
+//   } ,
+// });
+
+// export const loginStyles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: colors.background,
+//     // justifyContent:'center',
+//     // alignItems:'center',
+//   } ,
+//   cover: {
+//     width: '100%',
+//     height: device.height * 0.4,
+//     resizeMode: 'cover',
+//     borderBottomEndRadius: 30,
+//     borderBottomStartRadius: 30,
+//   },
+//   bottomContainer: {
+//     width: '100%',
+//     justifyContent: 'center',
+//     backgroundColor: '#fff',
+//     alignItems: 'center',
+//     paddingVertical: 20,
+//     paddingHorizontal: 15,
+//   },
+//   title: {
+//     textAlign: 'center',
+//     marginHorizontal: 24,
+//   },
+//   breakerContainer: {
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     gap: 10,
+//     overflow: "hidden",
+//     width: '100%',
+//     marginTop: 20,
+//     marginBottom: 10
+//   },
+//   horizontalLine: {
+//     height: 1,
+//     width: '100%',
+//     position: 'absolute',
+//     backgroundColor: colors.border,
+//     zIndex: -1
+//   },
+//   breakerText: {
+//     opacity: 0.9,
+//     backgroundColor: colors.background,
+//     paddingHorizontal: 10
+//   },
+//   buttonContainer: {
+//     backgroundColor: colors.primary,
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//     width: '100%',
+//     height: 45,
+//     marginVertical: 5,
+//     borderRadius: border.md,
+//   } ,
+//   footer: {
+//     position: "absolute",
+//     bottom: 26,
+//     alignSelf: 'center',
+//     width: '100%',
+//     justifyContent: 'center',
+//     alignItems: 'center'
+//   },
+//   footerTextContainer: {
+//     flexDirection: 'row',
+//     gap: 10,
+//     alignItems: 'center',
+//     marginTop: 5
+//   },
+//   footerText: {
+//     textDecorationLine: 'underline',
+//     fontSize: 10
+//   },
+
+// });
+
+
+
+
 import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from 'react-native';
 import { defaultTheme } from './unistyles';
-
+ 
 const { colors, device, border } = defaultTheme;
-
+ 
 export const splashStyles = StyleSheet.create({
   container: {
     flex: 1,
@@ -14,40 +130,38 @@ export const splashStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   } as ViewStyle,
-  msgText: {
-    // borderWidth:1.9,
-    // padding:10,
-    // borderRadius:10,
-    // fontWeight:"bold",
-    // fontSize:30,
-    textAlign: 'center',
-    color: colors.text,
-  } as TextStyle,
+ 
   logoImage: {
     width: device.width * 0.8,
     height: device.height * 0.4,
     resizeMode: 'contain',
     marginTop: 80,
   } as ImageStyle,
+ 
   treeImage: {
     width: device.width * 0.4,
     height: device.height * 0.14,
     resizeMode: 'contain',
   } as ImageStyle,
+ 
+  msgText: {
+    textAlign: 'center',
+    color: colors.text,
+  } as TextStyle,
+ 
   animatedContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 40,
   } as ViewStyle,
 });
-
+ 
 export const loginStyles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
-    // justifyContent:'center',
-    // alignItems:'center',
   } as ViewStyle,
+ 
   cover: {
     width: '100%',
     height: device.height * 0.4,
@@ -55,6 +169,7 @@ export const loginStyles = StyleSheet.create({
     borderBottomEndRadius: 30,
     borderBottomStartRadius: 30,
   } as ImageStyle,
+ 
   bottomContainer: {
     width: '100%',
     justifyContent: 'center',
@@ -63,26 +178,66 @@ export const loginStyles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 15,
   } as ViewStyle,
+ 
   title: {
     textAlign: 'center',
-    marginHorizontal: 24,
+    marginHorizontal: 20,
   } as TextStyle,
+ 
+  breakerContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 10,
+    overflow: 'hidden',
+    width: '100%',
+    marginTop: 20,
+    marginBottom: 10,
+  } as ViewStyle,
+ 
+  horizontalLine: {
+    height: 1.5,
+    width: '100%',
+    position: 'absolute',
+    backgroundColor: colors.border,
+    zIndex: -1,
+  } as ViewStyle,
+ 
+  breakerText: {
+    opacity: 0.8,
+    backgroundColor: colors.background,
+    paddingHorizontal: 10,
+  } as TextStyle,
+ 
   buttonContainer: {
     backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
-    height: 45,
+    height: 55,
     marginVertical: 5,
     borderRadius: border.md,
   } as ViewStyle,
+ 
+  footer: {
+    position: 'absolute',
+    bottom: 29,
+    alignSelf: 'center',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  } as ViewStyle,
+ 
+  footerTextContainer: {
+    flexDirection: 'row',
+    gap: 10,
+    alignItems: 'center',
+    marginTop: 5,
+  } as ViewStyle,
+ 
   footerText: {
     textDecorationLine: 'underline',
     fontSize: 10,
     color: colors.text,
   } as TextStyle,
 });
-
-
-
-
+ 
