@@ -1,15 +1,15 @@
-import { StyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native";
 import { defaultTheme } from "./unistyles";
 
 const { colors, device } = defaultTheme
 
 export const emptyStyles = StyleSheet.create({
-    container: (isLive: boolean = false) => ({
+    container:{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: isLive ? '#000' : colors.background
-    }),
+        backgroundColor: colors.background
+    },
     emptyImage: {
         width: device.width * 0.9,
         height: device.height * 0.4,

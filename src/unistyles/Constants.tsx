@@ -23,7 +23,7 @@ export const Colors = {
     border: '#E5E9EF',
     
 
-    lightText: '#9197A6',
+    lightText: '#828897bd',
     active: '#019A51',
     dark: '#18171C'
 }

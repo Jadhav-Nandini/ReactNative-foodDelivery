@@ -1,9 +1,11 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
 import { isBannerHeight } from "./Constants";
-import { Platform } from "react-native";
+import { Platform, StyleSheet } from "react-native";
+import { defaultTheme } from "./unistyles";
 
-export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
+const { colors, border, device } = defaultTheme
+
+export const homeStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.background
@@ -170,4 +172,4 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
         borderBottomRightRadius: 8
     }),
 
-}))
+})

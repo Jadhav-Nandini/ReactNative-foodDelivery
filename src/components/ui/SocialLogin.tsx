@@ -25,4 +25,3 @@ const SocialLogin = () => {
 
 export default SocialLogin
 
-const styles = StyleSheet.create({})
