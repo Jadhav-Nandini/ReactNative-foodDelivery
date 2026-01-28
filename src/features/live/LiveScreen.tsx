@@ -13,7 +13,7 @@ const LiveScreen = () => {
         backgroundColor: isLive ? '#000' : colors.background 
       }]}>
 
-        <Image source={require('@assets/images/coming_soon3.png')}
+        <Image source={require('@assets/images/coming_soon2.jpg')}
         style={emptyStyles.emptyImage}
          />
 

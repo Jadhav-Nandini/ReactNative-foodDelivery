@@ -57,4 +57,3 @@ const ScalePress = ({
 
 export default ScalePress
 
-const styles = StyleSheet.create({})

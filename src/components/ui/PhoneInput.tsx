@@ -1,36 +1,3 @@
-// import { Pressable, StyleSheet, Text, View } from 'react-native'
-// import React, {FC} from 'react'
-// import { phoneStyles } from '@unistyles/phoneStyles';
-
-
-// interface PhoneInputProps {
-//     value: string;
-//     onChangeText: (text: string) => void;
-//     onFocus?: () => void;
-//     onBlur?: () => void;
-// }
-
-// const PhoneInput:FC<PhoneInputProps> = ({
-//     value,
-//     onChangeText,
-//     onBlur,
-//     onFocus,
-// }) => {
-//   return (
-//     <View style={phoneStyles.container}>
-//         <Pressable>
-
-//         </Pressable>
-//     </View>
-//   )
-// }
-
-// export default PhoneInput
-
-// const styles = StyleSheet.create({})
-
-
-
 
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, {FC} from 'react'

@@ -24,8 +24,8 @@ export const homeStyles = StyleSheet.create({
         fontFamily: 'Okra-Bold'
     },
     animatedSubText: {
-        fontSize: RFValue(7),
-        lineHeight: 9,
+        fontSize: RFValue(8),
+        lineHeight: 10,
         fontFamily: 'Okra-Bold'
     },
     exploreContainer: {
@@ -51,12 +51,14 @@ export const homeStyles = StyleSheet.create({
     flexRowBetween: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        marginTop:4,
+        // gap:20,
         alignItems: 'center',
     },
     flexRowGap: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 4
+        gap: 6
     },
     flexRow: {
         flexDirection: 'row',
@@ -88,7 +90,7 @@ export const homeStyles = StyleSheet.create({
         alignSelf: 'center',
         height: 50,
         borderRadius: border.full,
-    },
+    } ,
     profileAvatar: {
         width: 40,
         marginHorizontal: 5,
@@ -105,10 +107,10 @@ export const homeStyles = StyleSheet.create({
         alignItems: 'center'
     },
     switch: {
-        width: 35,
-        height: 35,
+        width: 45,
+        height: 30,
         resizeMode: "contain",
-        bottom: 2
+        bottom: 1
     },
     searchInputContainer: {
         backgroundColor: '#F3F4F7',
@@ -120,9 +122,9 @@ export const homeStyles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        borderRadius: 12,
+        borderRadius: 22,
         width: '88%',
-        borderWidth: 0.6,
+        borderWidth: 1,
         borderColor: colors.tertiary,
         paddingHorizontal: 10,
     },

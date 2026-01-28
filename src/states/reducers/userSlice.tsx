@@ -1,0 +1,32 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from '../rootReducer'
+
+interface UserState {
+    user:any;
+    isVegMode: boolean
+}
+const initialState: UserState = {
+    user: {},
+    isVegMode: false
+}
+
+export const userSlice = createSlice({
+    
+    name: "User",
+    initialState,
+    reducers: {
+        setUser: (state, action: PayloadAction<object>) => {
+            state.user = action.payload
+        },
+        setVegMode: (state, action: PayloadAction<boolean>) => {
+            state.isVegMode = action.payload
+        }
+    }
+    
+})
+
+export const { setUser, setVegMode } = userSlice.actions
+
+export const selectuser = (state: RootState) => state.user?.user
+
+export default userSlice.reducer

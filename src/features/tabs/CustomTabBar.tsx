@@ -10,7 +10,7 @@ import ScalePress from '@components/ui/ScalePress'
 import { DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon } from './TabIcon'
 
 const CustomTabBar = (props: BottomTabBarProps) => {
-    const isVegMode = false;
+    const isVegMode = true;
 
     const { scrollY } = useSharedState();
 
@@ -107,7 +107,7 @@ const CustomTabBar = (props: BottomTabBarProps) => {
                             ? '#fff'
                             : isVegMode
                                 ? Colors.active
-                                : Colors.primary,
+                                : Colors.active,
                     },
                     ]}
                 />
