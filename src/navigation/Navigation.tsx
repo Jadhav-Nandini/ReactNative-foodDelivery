@@ -1,4 +1,4 @@
-import { Animated, StyleSheet, Text, View } from 'react-native'
+
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import SplashScreen from '@features/auth/SplashScreen'
@@ -38,4 +38,3 @@ const Navigation = () => {
 
 export default Navigation
 
-const styles = StyleSheet.create({})

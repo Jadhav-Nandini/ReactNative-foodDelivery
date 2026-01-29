@@ -1,5 +1,5 @@
-import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { Alert, Image, TouchableOpacity, View } from 'react-native'
+
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs'
 import { useSharedState } from './SharedContext'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
@@ -8,15 +8,21 @@ import { Colors, screenWidth } from '@unistyles/Constants'
 import { tabStyles } from '@unistyles/tabStyles'
 import ScalePress from '@components/ui/ScalePress'
 import { DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon } from './TabIcon'
+import { useAppSelector } from '@states/reduxHook'
 
 const CustomTabBar = (props: BottomTabBarProps) => {
-    const isVegMode = true;
+    const isVegMode = useAppSelector(state => state.user.isVegMode);
 
     const { scrollY } = useSharedState();
 
     const { state, navigation } = props;
     const bottom = useSafeAreaInsets();
-    const isLiveTabFocused = state.routes[state.index]?.name === 'Live';
+    // const isLiveTabFocused = state.routes[state.index]?.name === 'Live';
+
+    const currentRoute = state.routes[state.index];
+    const isLiveTabFocused = currentRoute && currentRoute.name === 'Live';
+
+
 
     const animatedStyle = useAnimatedStyle(() => {
         return {

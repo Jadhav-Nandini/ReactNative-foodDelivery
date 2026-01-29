@@ -1,6 +1,10 @@
-import { createStyleSheet } from "react-native-unistyles";
 
-export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
+import { defaultTheme } from "./unistyles";
+import { StyleSheet } from "react-native";
+
+const { colors, border, device } = defaultTheme
+
+export const cardStyles = StyleSheet.create({
     recommendedContainer: {
         marginTop: 25,
         paddingLeft:10
@@ -70,4 +74,4 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
         marginVertical: 10,
     },
 
-}))
+})

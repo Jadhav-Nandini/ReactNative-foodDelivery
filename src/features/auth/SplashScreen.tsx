@@ -20,7 +20,6 @@ const SplashScreen = () => {
   
   return (
     <View style={splashStyles.container}>
-      {/* <Text style={splashStyles.msgText}>The App is Started...</Text> */}
       <Image 
       source={require('@assets/images/logo_t.png')}
       style={splashStyles.logoImage}
@@ -37,10 +36,8 @@ const SplashScreen = () => {
         variant='h5'
         style={splashStyles.msgText}
         fontFamily='Okra-Medium'
-        color='#fff'
-        >
+        color='#fff'>
           From Kitchen to doorstep, Your cravings, delivered!
-
         </CustomText>
       </Animated.View>
       

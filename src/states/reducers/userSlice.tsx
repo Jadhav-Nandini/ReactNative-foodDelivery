@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { RootState } from '../rootReducer'
+import { RootState } from '@states/store'
 
 interface UserState {
     user:any;
@@ -10,9 +10,8 @@ const initialState: UserState = {
     isVegMode: false
 }
 
-export const userSlice = createSlice({
-    
-    name: "User",
+export const userSlice = createSlice({ 
+    name: "user",
     initialState,
     reducers: {
         setUser: (state, action: PayloadAction<object>) => {
@@ -22,7 +21,6 @@ export const userSlice = createSlice({
             state.isVegMode = action.payload
         }
     }
-    
 })
 
 export const { setUser, setVegMode } = userSlice.actions

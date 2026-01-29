@@ -32,4 +32,3 @@ const UserBottomTab = () => {
 
 export default UserBottomTab
 
-const styles = StyleSheet.create({})

@@ -1,4 +1,4 @@
-import { ActivityIndicator, Animated, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { ActivityIndicator, Animated, Image, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 import { loginStyles } from '@unistyles/authStyles'
 import CustomText from '@components/global/CustomText'

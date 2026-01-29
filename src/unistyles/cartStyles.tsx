@@ -1,7 +1,10 @@
-import { createStyleSheet } from 'react-native-unistyles';
-import { screenHeight, screenWidth } from './Constants';
 
-export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
+import { StyleSheet } from 'react-native';
+import { screenHeight, screenWidth } from './Constants';
+import { defaultTheme } from './unistyles';
+const { colors, border, device } = defaultTheme
+
+export const cartStyles = StyleSheet.create({
     cartContainer: {
         position: 'absolute',
         bottom: 0,
@@ -116,4 +119,4 @@ export const cartStyles = createStyleSheet(({ device, colors, border }) => ({
         justifyContent: 'space-between',
         marginVertical: 15
     }
-}));
+})

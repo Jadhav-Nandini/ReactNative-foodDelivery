@@ -1,13 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
 import {MMKV} from 'react-native-mmkv'
 import { Storage } from 'redux-persist';
-import React from 'react'
 
-const storage = new MMKV();
-// export const token_storage = new MMKV({
-//     id: 'user_storage',
-//     encryptionKey: 'RSA KEY'
-// })
+const storage = new MMKV ();
 
 const reduxStorage: Storage = {
     setItem: (key, val) => {
@@ -16,14 +10,34 @@ const reduxStorage: Storage = {
     },
     getItem: (key) => {
         const value = storage.getString(key)
-        return Promise.resolve(value)
+        return Promise.resolve(value ?? null)
     },
     removeItem: (key) => {
         storage.delete(key)
         return Promise.resolve()
-
     }
 }
 
 export default reduxStorage
 
+// import { MMKV } from 'react-native-mmkv'
+// import type { Storage } from 'redux-persist'
+
+// const storage = new MMKV()
+
+// const reduxStorage: Storage = {
+//   setItem: (key, value) => {
+//     storage.set(key, value)
+//     return Promise.resolve(true)
+//   },
+//   getItem: key => {
+//     const value = storage.getString(key)
+//     return Promise.resolve(value)
+//   },
+//   removeItem: key => {
+//     storage.delete(key)
+//     return Promise.resolve()
+//   },
+// }
+
+// export default reduxStorage
