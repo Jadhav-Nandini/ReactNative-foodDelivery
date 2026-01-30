@@ -1,12 +1,35 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import userReducer from './reducers/userSlice'
+// import { combineReducers } from "@reduxjs/toolkit";
+// import userReducer from './reducers/userSlice'
 
+
+// const rootReducer = combineReducers({
+//     user: userReducer
+// })
+
+// // export type RootState = ReturnType<typeof rootReducer>;
+// export default rootReducer
+
+
+
+
+
+
+
+
+
+
+// src/states/rootReducer.tsx - AS-IS rakhein
+import { combineReducers } from "@reduxjs/toolkit";
+import userReducer from './reducers/userSlice';
 
 const rootReducer = combineReducers({
     user: userReducer
-})
+});
 
-// export type RootState = ReturnType<typeof rootReducer>;
-export default rootReducer
+export default rootReducer;
+
+
+
+
 
 

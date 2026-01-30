@@ -8,10 +8,11 @@ import { Colors, screenWidth } from '@unistyles/Constants'
 import { tabStyles } from '@unistyles/tabStyles'
 import ScalePress from '@components/ui/ScalePress'
 import { DeliveryTabIcon, DiningTabIcon, LiveTabIcon, ReorderTabIcon } from './TabIcon'
-import { useAppSelector } from '@states/reduxHook'
+// import { useAppSelector } from '@states/reduxHook'
 
 const CustomTabBar = (props: BottomTabBarProps) => {
-    const isVegMode = useAppSelector(state => state.user.isVegMode);
+    // const isVegMode = useAppSelector(state => state.user.isVegMode);
+    const isVegMode = true;
 
     const { scrollY } = useSharedState();
 
@@ -32,7 +33,6 @@ const CustomTabBar = (props: BottomTabBarProps) => {
                         scrollY.value === 1
                             ? withTiming(100, { duration: 300 })
                             : withTiming(0, { duration: 300 })
-
                 }
             ]
         }

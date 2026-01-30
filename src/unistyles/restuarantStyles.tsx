@@ -1,9 +1,11 @@
-import { createStyleSheet } from "react-native-unistyles";
-import { Colors } from "./Constants";
-import { Platform } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
 
-export const restaurantStyles = createStyleSheet(({ device, colors, border }) => ({
+import { Colors } from "./Constants";
+import { Platform, StyleSheet } from "react-native";
+import { RFValue } from "react-native-responsive-fontsize";
+import { defaultTheme } from "./unistyles";
+
+const { device, colors, border } = defaultTheme
+export const restaurantStyles = StyleSheet.create({
     listContainer: {
         paddingBottom: 300
     },
@@ -63,7 +65,7 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
         paddingVertical: 5,
         zIndex: 999,
     },
-}))
+})
 
 export const shadowStyle = {
     backgroundColor: Colors.background,
@@ -74,7 +76,7 @@ export const shadowStyle = {
     shadowColor: Colors.border,
 }
 
-export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border }) => ({
+export const restaurantHeaderStyles = StyleSheet.create({
     headerContainer: {
         flexDirection: "row",
         alignItems: 'center',
@@ -112,10 +114,10 @@ export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border
         backgroundColor: colors.background,
         paddingBottom: 100
     }
-}))
+})
 
 
-export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
+export const searchStyles = StyleSheet.create({
     container: {
         backgroundColor: colors.background,
         shadowOffset: { width: 1, height: -4 },
@@ -203,4 +205,4 @@ export const searchStyles = createStyleSheet(({ device, colors, border }) => ({
         height: 400,
         position: 'absolute'
     }
-}))
+})

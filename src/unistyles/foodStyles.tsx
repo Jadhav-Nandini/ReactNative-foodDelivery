@@ -1,7 +1,10 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import { createStyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native-unistyles";
+import { defaultTheme } from "./unistyles";
 
-export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
+const { device, colors, border } = defaultTheme
+
+export const foodStyles = StyleSheet.create({
     container: {
         flexDirection: "row",
         alignItems: 'flex-start',
@@ -94,4 +97,4 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         flexDirection: 'row',
         paddingHorizontal: 10,
     }
-}))
+});

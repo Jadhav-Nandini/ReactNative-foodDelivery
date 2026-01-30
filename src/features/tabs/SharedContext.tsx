@@ -1,6 +1,6 @@
 
 import { createContext, ReactNode, FC, useContext } from 'react'
-import Animated, {
+import {
   useSharedValue,
   withTiming,
   SharedValue,
@@ -37,7 +37,6 @@ export const SharedStateProvider: FC<{ children: ReactNode }> = ({
 
 export const useSharedState = () => {
   const context = useContext(SharedStateContext)
-
   if (context === undefined) {
     throw new Error(
       'useSharedState must be used within a SharedStateProvider'

@@ -63,3 +63,20 @@
 
 
 // paths - directly comes on the specified path no need to give ../../ 
+
+
+
+
+// types/react-native-mmkv.d.ts 
+
+
+// declare module 'react-native-mmkv' {
+//   export class MMKV {
+//     constructor(options?: { id?: string; encryptionKey?: string })
+//     set(key: string, value: any): void
+//     getString(key: string): string | undefined
+//     delete(key: string): void
+//   }
+// }
+
+

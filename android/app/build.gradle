@@ -106,7 +106,7 @@ react {
 // Before publishing → set true and test release build carefully, adding ProGuard rules if icons/fonts break.
 // def enableProguardInReleaseBuilds = true
 
-def enableProguardInReleaseBuilds = true
+def enableProguardInReleaseBuilds = false
 
 
 /**
