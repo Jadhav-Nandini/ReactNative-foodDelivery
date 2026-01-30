@@ -75,4 +75,3 @@ const LocationHeader = () => {
 
 export default LocationHeader
 
-const styles = StyleSheet.create({})

@@ -64,10 +64,9 @@
 
 
 
-// App.tsx
-// import { SafeAreaProvider } from 'react-native-safe-area-context';
+
 import { Provider } from 'react-redux';
-import { store } from '@states/store'; // ✅ Only store import karein
+import { store } from '@states/store';
 import Navigation from '@navigation/Navigation';
 
 const App = () => {
@@ -77,7 +76,7 @@ const App = () => {
         {/* ✅ PersistGate ki zaroorat nahi ab */}
         <Navigation />
       </Provider>
-    // </SafeAreaProvider>
+
   );
 };
 

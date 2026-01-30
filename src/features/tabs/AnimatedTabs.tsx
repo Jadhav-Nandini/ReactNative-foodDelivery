@@ -9,5 +9,7 @@ const AnimatedTabs = () => {
     </SharedStateProvider>
   )
 }
+
+
 export default AnimatedTabs
 

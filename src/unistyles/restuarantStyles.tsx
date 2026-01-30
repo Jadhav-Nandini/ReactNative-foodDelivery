@@ -7,7 +7,8 @@ import { defaultTheme } from "./unistyles";
 const { device, colors, border } = defaultTheme
 export const restaurantStyles = StyleSheet.create({
     listContainer: {
-        paddingBottom: 300
+        paddingBottom: 300,
+        // backgroundColor:colors.background
     },
     shadowBottom: {
         shadowOffset: { width: 1, height: 18 },

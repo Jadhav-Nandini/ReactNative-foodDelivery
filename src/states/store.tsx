@@ -42,21 +42,19 @@
 
 
 
-// src/states/store.tsx - TEMPORARY VERSION (no redux-persist)
+// src/states/store.tsx
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './rootReducer';
 
+// ✅ Simple store WITHOUT redux-persist
 export const store = configureStore({
   reducer: rootReducer,
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: false, // Temporary
-    }),
+  // Middleware automatically configure ho jayega
 });
 
+// Types for TypeScript
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
 
 
 

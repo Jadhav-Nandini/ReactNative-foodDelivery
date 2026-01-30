@@ -3,7 +3,7 @@ import { Dimensions } from "react-native";
 export const BOTTOM_TAB_HEIGHT = 90
 export const screenHeight = Dimensions.get('screen').height
 export const screenWidth = Dimensions.get('screen').width
-export const isBannerHeight = screenHeight * 0.4
+export const isBannerHeight = screenHeight * 0.5
 
 export const Colors = {
     // primary: '#bd96fc5d',
@@ -17,8 +17,8 @@ export const Colors = {
     secondary: '#e98e18',
     tertiary: '#F4F4F2',
     background: '#fff',
-    // background: '#fc9b2c28',
-
+    // background: '#fc9b2c28'
+    
     background_light:'#F4F6FC',
     border: '#E5E9EF',
     

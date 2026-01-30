@@ -6,13 +6,14 @@ import SplashScreen from '@features/auth/SplashScreen'
 import LoginScreen from '@features/auth/LoginScreen'
 import { navigationRef } from '@utils/NavigationUtils'
 import AnimatedTabs from '@features/tabs/AnimatedTabs'
-// import { SafeAreaProvider } from 'react-native-safe-area-context'
+import RestaurantScreen from '@features/restaurants/RestaurantScreen'
+
 
 const Stack = createNativeStackNavigator()
 
 const Navigation = () => {
   return (
-    // <SafeAreaProvider>
+
       
     <NavigationContainer ref={navigationRef}>
         <Stack.Navigator 
@@ -23,6 +24,12 @@ const Navigation = () => {
             <Stack.Screen 
             name='SplashScreen' 
             component={SplashScreen} />
+
+           <Stack.Screen 
+            name='RestaurantScreen' 
+            component={RestaurantScreen} />
+
+            
             <Stack.Screen 
             name='LoginScreen'
             options={{ animation: 'fade'}}
@@ -36,8 +43,6 @@ const Navigation = () => {
             />
         </Stack.Navigator>
     </NavigationContainer>
-    //  </SafeAreaProvider> 
-
   )
 }
 

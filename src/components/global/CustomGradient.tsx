@@ -28,6 +28,7 @@ const CustomGradient: FC<CustomGradientProps> = ({
     const bottomColors = [
         ...(mode === 'dark' ? darkColors : lightColors),
     ].reverse();
+    
     const gradientStyle: ViewStyle ={
         position: 'absolute',
         width: '100%',

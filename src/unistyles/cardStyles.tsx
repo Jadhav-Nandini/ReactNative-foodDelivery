@@ -19,14 +19,15 @@ export const cardStyles = StyleSheet.create({
         paddingHorizontal: 15,
     },
     itemContainer: {
+        // backgroundColor:colors.background,
         marginRight: 15,
         width: device.width * 0.3,
         overflow: 'hidden',
         marginBottom: 15,
     },
     regularFoodImage: {
-        width: device.width * 0.28,
-        height: device.width * 0.28,
+        width: device.width * 0.30,
+        height: device.width * 0.30,
         resizeMode: 'cover'
     },
     bookmarkIcon: {
