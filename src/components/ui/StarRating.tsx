@@ -27,9 +27,9 @@ const StarRating: FC<{ rating: number }> = ({ rating }) => {
             </CustomText>
             <Icon
                 name="star"
-                iconFamily="MaterialIcons"
+                iconFamily="FontAwesome"
                 color="#fff"
-                size={16}
+                size={14}
             />
         </View>
     )

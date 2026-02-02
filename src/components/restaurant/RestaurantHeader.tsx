@@ -12,19 +12,27 @@ const RestaurantHeader:FC<{title: string}> = ({title}) => {
         <View style={restaurantHeaderStyles.flexRowGap}>
             <TouchableOpacity onPress={() => goBack()}>
                 <Icon
-                 name='arrow-left'
-                 iconFamily='MaterialCommunityIcons'
-                 size={24} />
+                 name='arrow-back'
+                 iconFamily='Ionicons'
+                 size={27} />
             </TouchableOpacity>
  
             <View>
                 <CustomText
                     fontFamily='Okra-Medium'
-                    fontSize={9.5}
-                     style={restaurantHeaderStyles.title} />
- 
+                    fontSize={11.2}
+                     style={restaurantHeaderStyles.title}>
+                     {title}
+                     </CustomText>
+                     <CustomText fontFamily='Okra-Bold' 
+                     fontSize={12}>
+                        Recommended for you</CustomText>
             </View>
         </View>
+
+        <TouchableOpacity>
+            <Icon name='ellipsis-vertical-sharp' iconFamily='Ionicons' size={25} />
+        </TouchableOpacity>
      
     </View>
   )

@@ -1,5 +1,5 @@
 import { RFValue } from "react-native-responsive-fontsize";
-import { StyleSheet } from "react-native-unistyles";
+import { StyleSheet } from "react-native";
 import { defaultTheme } from "./unistyles";
 
 const { device, colors, border } = defaultTheme
@@ -31,11 +31,11 @@ export const foodStyles = StyleSheet.create({
         marginBottom: 10
     },
     infoContainer: {
-        width: '57%',
+        width: '55%',
         overflow: 'hidden'
     },
     imageContainer: {
-        width: "40%"
+        width: "44%"
     },
     addToCollectionContainer: {
         flexDirection: 'row',

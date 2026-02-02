@@ -32,6 +32,20 @@ const RestaurantList = () => {
           renderItem={renderItem}
           keyExtractor={item => item?.id.toString()}
           contentContainerStyle={cardStyles.listContainer}
+          ListFooterComponent={()=>{
+            return( 
+              <View style={{
+                justifyContent:'center',
+                alignItems:'center',
+                opacity:0.5
+                }}>
+                <CustomText 
+                fontFamily='Okra-Medium' variant='h2'>Made With Heart</CustomText>
+                <CustomText fontFamily='Okra-Medium' variant='h5'>By - Nandini</CustomText>
+
+              </View>
+            )
+          }}
           />  
  
     </View>
