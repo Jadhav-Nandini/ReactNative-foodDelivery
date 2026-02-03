@@ -1,7 +1,7 @@
 import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { FC, useEffect, useState } from 'react'
 import { useAppDispatch } from '@states/reduxHook';
-import { addCustomizableItem, cartSlice } from '@states/reducers/cartSlice';
+import { addCustomizableItem, cartSlice, updateCustomizableItem } from '@states/reducers/cartSlice';
 import { modelStyles } from '@unistyles/modelStyles';
 import CustomText from '@components/global/CustomText';
 import Icon from '@components/global/Icon';
@@ -10,6 +10,7 @@ import DottedLine from '@components/list/DottedLine';
 import ScalePress from '@components/ui/ScalePress';
 import { RFValue } from 'react-native-responsive-fontsize';
 import AnimatedNumber from 'react-native-animated-numbers';
+
 function transformSelectedOptions(
   selectedOption: any,
   customizationOptions: any,
@@ -30,10 +31,11 @@ function transformSelectedOptions(
 
 
 
-const AddItemModal: FC<{ item: any; restaurant: any; onClose: () => void }> = ({
+const EditItemModal: FC<{ item: any; restaurant: any; onClose: () => void; cus: any }> = ({
   item,
   restaurant,
   onClose,
+  cus,
 }) => {
 
   const dispatch = useAppDispatch()
@@ -45,35 +47,36 @@ const AddItemModal: FC<{ item: any; restaurant: any; onClose: () => void }> = ({
 
 
   const [data, setData] = useState({
-    quantity: 1,
-    price: item?.price,
-    selectedOption: {} as Record<string, number>
+    quantity: cus?.quantity,
+    price: cus?.cartPrice,
+    selectedOption: {} as Record<string, number>,
   })
 
   useEffect(() => {
-    const defaultSelectionOption: Record<string, number> = {}
+    const defaultSelectedOption: Record<string, number> = {}
 
     let initialPrice = item?.price || 0
 
-    item?.customizationOptions?.forEach((customization: any) => {
-      if (customization?.required) {
-        const defaultOptionIndex = customization?.options?.findIndex(
-          (option: any) => option?.price === 0,
+    cus?.customizationOptions?.forEach((cusOption: any) => {
+        const itemCustomization = item?.customizations?.find(
+            (option: any) => option.type === cusOption.type
+        )
+      if (itemCustomization) {
+        const selectedIndex = itemCustomization?.options?.findIndex(
+          (option: any) => option?.name === cusOption?.selectedOption?.name,
         );
-        if (defaultOptionIndex !== -1) {
-          defaultSelectionOption[customization.type] = defaultOptionIndex;
-          initialPrice += customization?.options[defaultOptionIndex]?.price || 0;
+        if (selectedIndex !== -1) {
+          defaultSelectedOption[cusOption?.type] = selectedIndex;
         }
       }
     });
 
     setData(prevData => ({
       ...prevData,
-      selectedOption: defaultSelectionOption,
-      price: initialPrice,
+      selectedOption: defaultSelectedOption,
     }));
 
-  }, [item]);
+  }, [item, cus]);
 
 
 
@@ -131,23 +134,24 @@ const AddItemModal: FC<{ item: any; restaurant: any; onClose: () => void }> = ({
   };
 
 
-  const addItemIntoCart = async () => {
+  const updateItemIntoCart = async () => {
     const customizationOptions = transformSelectedOptions(
       data?.selectedOption,
       item?.customizationOptions,
     ).sort((a, b) => a.type.localeCompare(b.type));
 
     const customizedData = {
-      restaurant: restaurant,
-      item: item,
-      customizations: {
+      restaurant_id: restaurant?.id,
+      itemId: item?.id,
+      customizationId: cus?.id,
+      newCustomization:{
         quantity: data?.quantity,
         price: data?.price,
         customizationOptions: customizationOptions,
       },
     };
 
-    dispatch(addCustomizableItem(customizedData));
+    dispatch(updateCustomizableItem(customizedData));
     onClose();
   }
 
@@ -158,9 +162,11 @@ const AddItemModal: FC<{ item: any; restaurant: any; onClose: () => void }> = ({
         <View style={modelStyles.flexRowGap}>
           <Image source={{ uri: item?.image }}
             style={modelStyles.headerImage} />
-          <CustomText fontFamily='Okra-Medium' fontSize={12}>
-            {item?.name}
-          </CustomText>
+            <View>
+
+          <CustomText fontFamily='Okra-Medium' fontSize={12}> {item?.name}</CustomText>
+          <CustomText fontFamily='Okra-Medium' fontSize={12}> Edit </CustomText>
+            </View>
         </View>
 
         <View style={modelStyles.flexRowGap}>
@@ -263,10 +269,10 @@ const AddItemModal: FC<{ item: any; restaurant: any; onClose: () => void }> = ({
         </View>
         <TouchableOpacity
           style={[modelStyles.addButtonContainer, { margin: 12 }]}
-          onPress={addItemIntoCart}
+          onPress={updateItemIntoCart}
         >
           <CustomText color='#fff' fontFamily='Okra-Medium' variant='h5'>
-            Add Item - ₹{data?.price}
+            Update Item - ₹{data?.price}
           </CustomText>
         </TouchableOpacity>
       </View>
@@ -274,5 +280,5 @@ const AddItemModal: FC<{ item: any; restaurant: any; onClose: () => void }> = ({
   )
 }
 
-export default AddItemModal
+export default EditItemModal
 

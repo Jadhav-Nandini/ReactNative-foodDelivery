@@ -61,7 +61,7 @@ const AddButton: FC<{ item: any; restaurant: any }> = ({ item, restaurant }) => 
                 openRepeatModal()
                 return;
             }
-            openAddModal()
+            openAddModal();
         } else {
             dispatch(
                 addItemToCart({

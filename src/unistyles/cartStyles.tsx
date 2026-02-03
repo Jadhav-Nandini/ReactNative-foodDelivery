@@ -11,7 +11,9 @@ export const cartStyles = StyleSheet.create({
         width: '100%',
         backgroundColor: colors.background,
         alignItems: 'center',
-        paddingVertical: 10
+        paddingVertical: 10,
+//          zIndex: 999,
+//   elevation: 999,
     },
     expandedCartContainer: {
         justifyContent: 'flex-end',
@@ -104,6 +106,7 @@ export const cartStyles = StyleSheet.create({
         width: screenWidth,
         height: screenHeight,
         zIndex: -2,
+        
     },
     scrollContainer: {
         maxHeight: screenHeight * 0.7,

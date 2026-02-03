@@ -14,7 +14,7 @@ export const Colors = {
     text: '#222',
     // text: '#d7f8dd',
     active_light:'#ECFAF1',
-    secondary: '#e98e18',
+    secondary: '#2D2D2D',
     tertiary: '#F4F4F2',
     background: '#fff',
     // background: '#fc9b2c28'

@@ -1,6 +1,8 @@
 import { createSelector, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store';
-import { } from 'uuid'
+import { v4 as uuidv4 } from 'uuid';
+
+
 import RestaurantCard from '@components/list/RestaurantCard';
 
 
@@ -108,29 +110,156 @@ export const cartSlice = createSlice({
             }
         },
 
-        addCustomizableItem:(
+        addCustomizableItem: (
             state,
             action: PayloadAction<{
                 restaurant: RestaurantDetails;
                 item: CartItem;
                 customizations: {
                     quantity: number;
-                    price: Number;
+                    price: number;
                     customizationOptions: any[]
                 }
             }>
         ) => {
 
+            const { restaurant, item, customizations } = action.payload
+            const existingRestaurantCart = state.carts.find(
+                cart => cart.restaurant.id === restaurant.id,
+            );
+
+            if (existingRestaurantCart) {
+                const existingItem = existingRestaurantCart?.items?.find(
+                    cartItem => cartItem?.id === item?.id,
+                ) as any;
+
+                // If exisiting item - find it 
+                if (existingItem) {
+                    const existingCustomizationIndex = existingItem?.customizations?.findIndex(
+                        (cust: any) =>
+                            JSON.stringify(cust.customizationOptions) ===
+                            JSON.stringify(customizations.customizationOptions),
+                    );
+
+                    // then the item found
+                    if (
+                        existingCustomizationIndex !== undefined &&
+                        existingCustomizationIndex !== -1
+                    ) {
+                        // customized it 
+                        const existingCustomization = existingItem?.customizations[existingCustomizationIndex];
+                        existingCustomization.quantity += customizations?.quantity;
+                        existingCustomization.cartPrice += customizations?.price;
+                    } else {
+                        // if not then push it 
+                        // const newCustomizationId = uuid();
+                        const newCustomizationId = uuidv4();
+                        existingItem?.customizations?.push({
+                            id: newCustomizationId,
+                            ...customizations,
+                            quantity: customizations?.quantity,
+                            cartPrice: customizations?.price,
+                            price: customizations?.price / customizations?.quantity
+                        })
+                    }
+
+                    // after push update the quantity and price
+                    existingItem.quantity += customizations?.quantity
+                    existingItem.cartPrice = (existingItem?.cartPrice || 0) + customizations?.price
+
+
+
+                } else {
+
+                    const newCustomizationId = `c1`;
+                    existingRestaurantCart.items.push({
+                        ...item,
+                        quantity: customizations.quantity,
+                        cartPrice: customizations?.price,
+                        customizations: [
+                            {
+                                id: newCustomizationId,
+                                ...customizations,
+                                quantity: customizations.quantity,
+                                cartPrice: customizations.price,
+                                price: customizations.price / customizations.quantity
+                            }
+                        ]
+                    })
+                }
+            } else {
+                const newCustomizationId = `c1`;
+                state.carts.push({
+                    restaurant,
+                    items: [
+                        {
+                            ...item,
+                            quantity: customizations.quantity,
+                            cartPrice: customizations?.price,
+                            customizations: [
+                                {
+                                    id: newCustomizationId,
+                                    ...customizations,
+                                    quantity: customizations.quantity,
+                                    cartPrice: customizations.price,
+                                    price: customizations.price / customizations.quantity
+                                }
+                            ]
+                        }
+                    ]
+                })
+            }
+
+
+
         },
-        
+
         removeCustomizableItem: (
             state,
             action: PayloadAction<{
                 restaurant_id: string;
                 itemId: string;
-                customizationId:string
+                customizationId: string
             }>
         ) => {
+
+            const { restaurant_id, itemId, customizationId } = action.payload;
+            const restaurantCart = state?.carts?.find(
+                cart => cart?.restaurant?.id === restaurant_id,
+            );
+
+            if (!restaurantCart) return;
+            const item = restaurantCart?.items?.find(
+                cartItem => cartItem?.id === itemId,
+            );
+            if (!item) return;
+            const customizationIndex = item?.customizations?.findIndex(
+                cust => cust?.id === customizationId,
+            ) as number;
+
+            // find customization
+            if (customizationIndex !== -1 && item?.customizations) {
+                const customization = item.customizations[customizationIndex];
+                // Removing (-) the quantity and cartPrice of  specific customization 
+                if (customization?.quantity > 1) {
+                    customization.quantity -= 1;
+                    customization.cartPrice -= customization?.price;
+                } else {
+                    // if the quantity is already one so it will remove completely
+                    item?.customizations?.splice(customizationIndex, 1);
+                }
+
+                item.quantity -= 1;
+                item.cartPrice = (item.cartPrice || 0) - customization.price;
+                if (item?.quantity === 0 || item?.customizations?.length === 0) {
+
+                    restaurantCart.items = restaurantCart?.items?.filter(
+                        cartItem => cartItem.id !== itemId,
+                    );
+                }
+
+            }
+
 
         },
         updateCustomizableItem: (
@@ -140,15 +269,61 @@ export const cartSlice = createSlice({
                 itemId: string;
                 customizationId: string;
                 newCustomization: {
-                    quantity:number;
-                    price:number;
+                    quantity: number;
+                    price: number;
                     customizationOptions: any[]
                 };
             }>
-        ) => {},
+        ) => {
 
-        
-        
+            const { restaurant_id, itemId, customizationId, newCustomization } = action.payload;
+
+            const restaurantCart = state.carts.find(
+                cart => cart.restaurant.id === restaurant_id,
+            );
+            if (!restaurantCart) return;
+
+            const item = restaurantCart.items.find(
+                cartItem => cartItem.id === itemId,
+            );
+            if (!item || !item.customizations) return;
+
+            const matchingCustomizationIndex = item?.customizations?.findIndex(
+                (cust: any) => cust?.id !== customizationId && JSON.stringify(cust.customizationOptions) === JSON.stringify(newCustomization.customizationOptions),
+            );
+
+            const targetCustomizationIndex = item?.customizations?.findIndex(
+                cust => cust.id === customizationId,
+            );
+            if (targetCustomizationIndex === -1) return;
+
+            const targetCustomization = item?.customizations[targetCustomizationIndex]
+
+            if (matchingCustomizationIndex !== -1) {
+                const matchingCustomization = item?.customizations[matchingCustomizationIndex]
+
+                matchingCustomization.quantity += newCustomization?.quantity;
+                matchingCustomization.cartPrice += newCustomization?.price;
+
+                item?.customizations?.splice(targetCustomizationIndex, 1)
+
+            } else {
+
+                targetCustomization.quantity = newCustomization.quantity;
+                targetCustomization.cartPrice = newCustomization.price;
+                targetCustomization.price = newCustomization.price / newCustomization.quantity;
+                targetCustomization.customizationOptions = newCustomization.customizationOptions
+            }
+
+
+            item.quantity = item?.customizations?.reduce((sum, cust) => sum + cust.quantity, 0)
+            item.cartPrice = item?.customizations?.reduce((sum, cust) => sum + cust.cartPrice, 0)
+
+
+        },
+
+
+
         clearAllCarts: (state) => {
             state.carts = []
         },

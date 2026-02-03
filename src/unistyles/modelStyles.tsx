@@ -76,6 +76,7 @@ export const modelStyles = StyleSheet.create({
     },
     scrollContainer: {
         backgroundColor: colors.background_light,
+        // paddingBottom:160,  add this
         padding: 10,
     },
     scrollContainerWhiteBackground: {
@@ -99,7 +100,7 @@ export const modelStyles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: colors.background,
-        shadowOffset: { width: 1, height: -3 },
+        shadowOffset: { width: 1, height: 3 },
         shadowOpacity: 0.1,
         elevation: 5,
         shadowRadius: 2,
@@ -118,7 +119,7 @@ export const modelStyles = StyleSheet.create({
     },
     selectedContainer: {
         height: 45,
-        width: '30%',
+        width: '25%',
         justifyContent: 'space-between',
         alignItems: 'center',
         flexDirection: 'row',
