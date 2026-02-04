@@ -38,11 +38,11 @@ const ArrowButton: FC<ArrowButtonProps> = ({
                         variant="h6"
                         style={{ color: 'white' }}
                         fontFamily="Okra-Bold"
-                    > ₹{price + 34}.0
+                    > ₹{price + 34}.00
                     </CustomText>
                     <CustomText
-                        fontSize={9}
-                        style={{ color: 'white' }}
+                        fontSize={11}
+                        style={{ color: 'white', paddingLeft:9 }}
                         fontFamily="Okra-Medium"
                     >
                         TOTAL
@@ -65,7 +65,10 @@ const ArrowButton: FC<ArrowButtonProps> = ({
                     style={{marginHorizontal:5}}
                     />
                 ): (
-                    <Icon  name="arrow-right" iconFamily="FontAwesome" size={RFValue(25)}/>
+                    <Icon  name="chevron-forward" 
+                    iconFamily="Ionicons"
+                    color="#fff"
+                     size={RFValue(20)}/>
                 )}
             </View>
         </TouchableOpacity>

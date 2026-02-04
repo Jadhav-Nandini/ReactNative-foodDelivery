@@ -12,6 +12,7 @@ import CustomText from '@components/global/CustomText'
 import { RFValue } from 'react-native-responsive-fontsize'
 import Icon from '@components/global/Icon'
 import BillDetails from '@components/checkout/BillDetails'
+import ArrowButton from '@components/checkout/ArrowButton'
 
 const CheckoutScreen: FC = () => {
   const route = useRoute() as any
@@ -85,9 +86,31 @@ const CheckoutScreen: FC = () => {
             </View>
             
           </View>
-          
-
         </ScrollView>
+
+        <View style={styles.paymentGateway}>
+          <View style={{width: '30%'}}>
+            <CustomText fontSize={RFValue(9)} 
+            fontFamily='Okra-Medium'
+            >
+              PAY USING
+            </CustomText>
+            <CustomText fontSize={11} style={{marginTop: 2}}
+            fontFamily='Okra-Medium'>
+              Cash on Delivery
+            </CustomText>
+          </View>
+          <View style={{width:'70%'}}>
+            <ArrowButton  
+            loading={loading}
+            price={totalItemPrice}
+            title='Place Order'
+            onPress={handlePlaceOrder}
+            />
+          </View>
+          
+        </View>
+        
       </View>
 
 
@@ -127,13 +150,13 @@ const styles = StyleSheet.create({
     paddingLeft: 14,
     backgroundColor: 'white',
     position: 'absolute',
-    paddingTop: 10,
+    paddingTop: 20,
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.3,
     elevation: 5,
     shadowRadius: 5,
     shadowColor: Colors.lightText,
-    bottom: 0,
+    bottom: 30,
     paddingBottom: 5,
   },
   cancelText: {
