@@ -19,7 +19,9 @@ export const Colors = {
     background: '#fff',
     // background: '#fc9b2c28'
     
-    background_light:'#F4F6FC',
+    // background_light:'#F4F6FC',
+    background_light:'#eaecf1',
+
     border: '#E5E9EF',
     
 
